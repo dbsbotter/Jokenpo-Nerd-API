@@ -42,9 +42,9 @@ namespace Jokenpo.Domain.Infra.Migrations
 
                     b.ToTable("Jokenpo");
 
-                    b.HasCheckConstraint("CK_Jokenpos_PlayerOne", "PlayerOne = 'R' OR PlayerOne = 'P' PlayerOne = 'S' PlayerOne = 'L' PlayerOne = 'K'");
+                    b.HasCheckConstraint("CK_Jokenpos_PlayerOne", "PlayerOne = 'R' OR PlayerOne = 'P' OR PlayerOne = 'S' OR PlayerOne = 'L' OR PlayerOne = 'K'");
 
-                    b.HasCheckConstraint("CK_Jokenpos_PlayerTwo", "PlayerOne = 'R' OR PlayerOne = 'P' PlayerOne = 'S' PlayerOne = 'L' PlayerOne = 'K'");
+                    b.HasCheckConstraint("CK_Jokenpos_PlayerTwo", "PlayerTwo = 'R' OR PlayerTwo = 'P' OR PlayerTwo = 'S' OR PlayerTwo = 'L' OR PlayerTwo = 'K'");
                 });
 #pragma warning restore 612, 618
         }

@@ -19,8 +19,8 @@ namespace Jokenpo.Domain.Infra.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Jokenpo", x => x.Id);
-                    table.CheckConstraint("CK_Jokenpos_PlayerOne", "PlayerOne = 'R' OR PlayerOne = 'P' PlayerOne = 'S' PlayerOne = 'L' PlayerOne = 'K'");
-                    table.CheckConstraint("CK_Jokenpos_PlayerTwo", "PlayerOne = 'R' OR PlayerOne = 'P' PlayerOne = 'S' PlayerOne = 'L' PlayerOne = 'K'");
+                    table.CheckConstraint("CK_Jokenpos_PlayerOne", "PlayerOne = 'R' OR PlayerOne = 'P' OR PlayerOne = 'S' OR PlayerOne = 'L' OR PlayerOne = 'K'");
+                    table.CheckConstraint("CK_Jokenpos_PlayerTwo", "PlayerTwo = 'R' OR PlayerTwo = 'P' OR PlayerTwo = 'S' OR PlayerTwo = 'L' OR PlayerTwo = 'K'");
                 });
         }
 
