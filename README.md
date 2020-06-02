@@ -1,7 +1,25 @@
-# Jokenpo Nerd
+# API Jokenpo Nerd
 
 Jokenpo Nerd, limitado a 2 jogadores.
 
-Uso de .NET Core 3.1, FluentValidation e CQRS.
+## Regras do jogo
 
-PS: API Inflada
+- Tesoura corta papel
+- Papel cobre pedra
+- Pedra esmaga Lagarto
+- Lagarto envenena Spock
+- Spock dobra tesoura
+- Tesoura decapita lagarto
+- Lagarto come papel
+- Papel desqualifica Spock
+- Spock vaporiza pedra
+- Pedra esmaga tesoura
+
+## Tecnologias utilizadas:
+
+- .NET Core 3.1
+- FluentValidation
+- CQRS (Sem o Q)
+- MSTest
+- Swagger
+- Database in Memory
