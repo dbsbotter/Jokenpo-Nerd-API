@@ -116,8 +116,8 @@ namespace Jokenpo.Api
                 });
             });
 
-            services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
-            // services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("conn")));
+            // services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
+            services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("conn")));
 
             services.AddTransient<IJokenpoRepository, JokenpoRepository>();
 
@@ -165,28 +165,14 @@ namespace Jokenpo.Api
             {
                 endpoints.MapControllers();
             });
-        }
-    }
 
-    public static class TypeExtensions
-    {
-        public static string FriendlyId(this Type type)
-        {
-            var typeName = type.Name;
-
-            if (type.GetTypeInfo().IsGenericType)
+            if (env.IsProduction())
             {
-                var genericArgumentIds = type.GetGenericArguments()
-                    .Select(t => t.FriendlyId())
-                    .ToArray();
-
-                return new StringBuilder(typeName)
-                    .Replace(string.Format("`{0}", genericArgumentIds.Count()), string.Empty)
-                    .Append(string.Format("_{0}", string.Join(",", genericArgumentIds).TrimEnd(',')))
-                    .ToString();
+                using (var context = app.ApplicationServices.GetService<DataContext>())
+                {
+                    context.Database.Migrate();
+                }
             }
-
-            return typeName;
         }
     }
 }

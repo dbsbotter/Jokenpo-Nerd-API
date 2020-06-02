@@ -22,4 +22,4 @@ Jokenpo Nerd, limitado a 2 jogadores.
 - CQRS (Sem o Q)
 - MSTest
 - Swagger
-- Database in Memory
+- SQLServer (Database in Memory)
