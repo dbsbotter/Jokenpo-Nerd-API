@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Jokenpo.Api.Controllers.Base;
 using Jokenpo.Domain.Commands;
 using Jokenpo.Domain.Entities;
@@ -32,9 +33,9 @@ namespace Jokenpo.Api.Controllers
         [ProducesResponseType(typeof(ValidationProblemDetails), 400)]
         [ProducesResponseType(typeof(DataResult<IEnumerable<JokenpoItem>>), 200)]
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            return DataResult(_jokenpoRepository.GetAll());
+            return DataResult(await _jokenpoRepository.GetAll());
         }
 
         /// <summary>
@@ -47,9 +48,9 @@ namespace Jokenpo.Api.Controllers
         [ProducesResponseType(typeof(ValidationProblemDetails), 400)]
         [ProducesResponseType(typeof(DataResult<string>), 200)]
         [HttpPost]
-        public IActionResult Play(PlayJokenpoCommand command)
+        public async Task<IActionResult> Play(PlayJokenpoCommand command)
         {
-            return DataResult(_handler.Handle(command));
+            return DataResult(await _handler.Handle(command));
         }
     }
 }

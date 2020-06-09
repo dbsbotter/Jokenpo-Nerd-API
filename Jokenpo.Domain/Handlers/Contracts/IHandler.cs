@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Jokenpo.Domain.Commands.Contracts;
 
 namespace Jokenpo.Domain.Handlers.Contracts

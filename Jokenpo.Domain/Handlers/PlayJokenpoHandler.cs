@@ -2,10 +2,11 @@ using Jokenpo.Domain.Commands;
 using Jokenpo.Domain.Handlers.Contracts;
 using Jokenpo.Domain.Entities;
 using Jokenpo.Domain.Repositories;
+using System.Threading.Tasks;
 
 namespace Jokenpo.Domain.Handlers
 {
-    public class PlayJokenpoHandler : IHandler<PlayJokenpoCommand, string>
+    public class PlayJokenpoHandler : IHandler<PlayJokenpoCommand, Task<string>>
     {
         private readonly IJokenpoRepository _jokenpoRepository;
 
@@ -14,14 +15,14 @@ namespace Jokenpo.Domain.Handlers
             _jokenpoRepository = jokenpoRepository;
         }
 
-        public string Handle(PlayJokenpoCommand command)
+        public async Task<string> Handle(PlayJokenpoCommand command)
         {
             var jokenpo = new JokenpoItem((char)command.PlayerOne,
                                           (char)command.PlayerTwo);
 
             jokenpo.Play();
 
-            _jokenpoRepository.Create(jokenpo);
+            await _jokenpoRepository.Create(jokenpo);
 
             switch (jokenpo.PlayerWinner)
             {

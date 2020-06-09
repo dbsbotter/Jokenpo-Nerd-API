@@ -6,7 +6,7 @@ namespace Jokenpo.Domain.Repositories
 {
     public interface IJokenpoRepository
     {
-         void Create(JokenpoItem jokenpo);
-         IEnumerable<JokenpoItem> GetAll();
+         Task Create(JokenpoItem jokenpo);
+         Task<IEnumerable<JokenpoItem>> GetAll();
     }
 }

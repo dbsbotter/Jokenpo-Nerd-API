@@ -16,17 +16,23 @@ namespace Jokenpo.Domain.Infra.Repositories
             _context = context;
         }
 
-        public void Create(JokenpoItem jokenpo)
+        public async Task Create(JokenpoItem jokenpo)
         {
-            _context.Jokenpos.Add(jokenpo);
-            _context.SaveChanges();
+            using (_context)
+            {
+                _context.Jokenpos.Add(jokenpo);
+                await _context.SaveChangesAsync();
+            }
         }
 
-        public IEnumerable<JokenpoItem> GetAll()
+        public async Task<IEnumerable<JokenpoItem>> GetAll()
         {
-            return _context
-                .Jokenpos
-                .AsNoTracking();
+            using (_context)
+            {
+                var result = await _context.Jokenpos.AsNoTracking().ToListAsync();
+
+                return result;
+            }
         }
     }
 }

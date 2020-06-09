@@ -131,6 +131,8 @@ namespace Jokenpo.Api
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseResponseCompression();
+
             app.UseApiVersioning();
 
             var provider = app.ApplicationServices.GetRequiredService<IApiVersionDescriptionProvider>();
