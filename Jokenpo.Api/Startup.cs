@@ -1,30 +1,25 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using FluentValidation.AspNetCore;
-using Jokenpo.Domain.Validators;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Jokenpo.Api.Convetions;
 using Jokenpo.Api.Filters;
 using Jokenpo.Domain.Handlers;
-using Microsoft.OpenApi.Models;
-using System.Reflection;
-using System;
-using System.Linq;
-using System.Text;
-using Microsoft.AspNetCore.Mvc.ApiExplorer;
-using System.Text.Json.Serialization;
-using System.IO;
 using Jokenpo.Domain.Infra.Contexts;
-using Microsoft.EntityFrameworkCore;
-using Jokenpo.Domain.Repositories;
 using Jokenpo.Domain.Infra.Repositories;
-using Microsoft.Extensions.Options;
-using Swashbuckle.AspNetCore.SwaggerGen;
-using Jokenpo.Api.Configs;
+using Jokenpo.Domain.Repositories;
+using Jokenpo.Domain.Validators;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
+using System;
+using System.IO;
+using System.Reflection;
+using System.Text.Json.Serialization;
 
 namespace Jokenpo.Api
 {
@@ -137,7 +132,8 @@ namespace Jokenpo.Api
 
             var provider = app.ApplicationServices.GetRequiredService<IApiVersionDescriptionProvider>();
 
-            app.UseSwagger(options => {
+            app.UseSwagger(options =>
+            {
                 options.RouteTemplate = "swagger/{documentName}/swagger.json";
             });
 

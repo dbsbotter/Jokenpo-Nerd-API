@@ -1,7 +1,7 @@
-using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.AspNetCore.Mvc.Routing;
+using System.Linq;
 
 namespace Jokenpo.Api.Convetions
 {

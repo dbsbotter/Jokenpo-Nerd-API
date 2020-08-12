@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Jokenpo.Domain.Entities
@@ -31,13 +31,14 @@ namespace Jokenpo.Domain.Entities
 
         private Dictionary<char, char[]> Rules()
         {
-            var rules = new Dictionary<char, char[]>();
-
-            rules.Add('R', new[] { 'S', 'L' }); //Rock wins
-            rules.Add('P', new[] { 'R', 'K' }); //Paper wins
-            rules.Add('S', new[] { 'P', 'L' }); //Scissors wins
-            rules.Add('L', new[] { 'K', 'P' }); //Lizard wins
-            rules.Add('K', new[] { 'S', 'R' }); //Spock wins
+            var rules = new Dictionary<char, char[]>
+            {
+                { 'R', new[] { 'S', 'L' } }, //Rock wins
+                { 'P', new[] { 'R', 'K' } }, //Paper wins
+                { 'S', new[] { 'P', 'L' } }, //Scissors wins
+                { 'L', new[] { 'K', 'P' } }, //Lizard wins
+                { 'K', new[] { 'S', 'R' } } //Spock wins
+            };
 
             return rules;
         }

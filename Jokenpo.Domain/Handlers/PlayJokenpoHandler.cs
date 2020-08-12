@@ -1,6 +1,6 @@
 using Jokenpo.Domain.Commands;
-using Jokenpo.Domain.Handlers.Contracts;
 using Jokenpo.Domain.Entities;
+using Jokenpo.Domain.Handlers.Contracts;
 using Jokenpo.Domain.Repositories;
 using System.Threading.Tasks;
 

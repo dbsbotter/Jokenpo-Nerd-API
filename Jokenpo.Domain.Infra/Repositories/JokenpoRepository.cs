@@ -1,9 +1,9 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Jokenpo.Domain.Entities;
 using Jokenpo.Domain.Infra.Contexts;
 using Jokenpo.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Jokenpo.Domain.Infra.Repositories
 {

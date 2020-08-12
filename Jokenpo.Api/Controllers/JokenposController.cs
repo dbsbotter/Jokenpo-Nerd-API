@@ -1,11 +1,11 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Jokenpo.Api.Controllers.Base;
 using Jokenpo.Domain.Commands;
 using Jokenpo.Domain.Entities;
 using Jokenpo.Domain.Handlers;
 using Jokenpo.Domain.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Jokenpo.Api.Controllers
 {

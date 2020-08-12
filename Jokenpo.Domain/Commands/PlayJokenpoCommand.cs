@@ -1,5 +1,5 @@
-using System.Runtime.Serialization;
 using Jokenpo.Domain.Commands.Contracts;
+using System.Runtime.Serialization;
 
 namespace Jokenpo.Domain.Commands
 {
